@@ -1,7 +1,7 @@
 # MAKEFILE
 #
 # @author      Nicola Asuni <info@tecnick.com>
-# @link        https://github.com/bits-and-blooms/bloom
+# @link        https://github.com/absolutelightning/bloom
 # ------------------------------------------------------------------------------
 
 # List special make targets that are not associated with files
@@ -11,13 +11,13 @@
 SHELL=/bin/bash
 
 # CVS path (path to the parent dir containing the project)
-CVSPATH=github.com/bits-and-blooms
+CVSPATH=github.com/absolutelightning
 
 # Project owner
-OWNER=bits-and-blooms
+OWNER=absolutelightning
 
 # Project vendor
-VENDOR=bits-and-blooms
+VENDOR=absolutelightning
 
 # Project name
 PROJECT=bloom

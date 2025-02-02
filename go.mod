@@ -1,8 +1,8 @@
-module github.com/bits-and-blooms/bloom/v3
+module github.com/absolutelightning/bloom
 
 go 1.16
 
 require (
-	github.com/bits-and-blooms/bitset v1.19.1
+	github.com/absolutelightning/bitset v1.0.0
 	github.com/twmb/murmur3 v1.1.6
 )

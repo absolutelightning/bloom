@@ -1,8 +1,8 @@
 Bloom filters
 -------------
-[![Test](https://github.com/bits-and-blooms/bloom/actions/workflows/test.yml/badge.svg)](https://github.com/bits-and-blooms/bloom/actions/workflows/test.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/bits-and-blooms/bloom)](https://goreportcard.com/report/github.com/bits-and-blooms/bloom)
-[![Go Reference](https://pkg.go.dev/badge/github.com/bits-and-blooms/bloom.svg)](https://pkg.go.dev/github.com/bits-and-blooms/bloom/v3)
+[![Test](https://github.com/absolutelightning/bloom/actions/workflows/test.yml/badge.svg)](https://github.com/absolutelightning/bloom/actions/workflows/test.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/absolutelightning/bloom)](https://goreportcard.com/report/github.com/absolutelightning/bloom)
+[![Go Reference](https://pkg.go.dev/badge/github.com/absolutelightning/bloom.svg)](https://pkg.go.dev/github.com/absolutelightning/bloom/v3)
 
 This library is used by popular systems such as [Milvus](https://github.com/milvus-io/milvus) and [beego](https://github.com/beego/Beego).
 
@@ -49,13 +49,13 @@ For numerical data, we recommend that you look into the encoding/binary library.
     filter.Add(n1)
 ```
 
-Godoc documentation:  https://pkg.go.dev/github.com/bits-and-blooms/bloom/v3 
+Godoc documentation:  https://pkg.go.dev/github.com/absolutelightning/bloom/v3 
 
 
 ## Installation
 
 ```bash
-go get -u github.com/bits-and-blooms/bloom/v3
+go get -u github.com/absolutelightning/bloom/v3
 ```
 
 ## Verifying the False Positive Rate
@@ -144,7 +144,7 @@ make qa
 
 ## Design
 
-A Bloom filter has two parameters: _m_, the number of bits used in storage, and _k_, the number of hashing functions on elements of the set. (The actual hashing functions are important, too, but this is not a parameter for this implementation). A Bloom filter is backed by a [BitSet](https://github.com/bits-and-blooms/bitset); a key is represented in the filter by setting the bits at each value of the  hashing functions (modulo _m_). Set membership is done by _testing_ whether the bits at each value of the hashing functions (again, modulo _m_) are set. If so, the item is in the set. If the item is actually in the set, a Bloom filter will never fail (the true positive rate is 1.0); but it is susceptible to false positives. The art is to choose _k_ and _m_ correctly.
+A Bloom filter has two parameters: _m_, the number of bits used in storage, and _k_, the number of hashing functions on elements of the set. (The actual hashing functions are important, too, but this is not a parameter for this implementation). A Bloom filter is backed by a [BitSet](https://github.com/absolutelightning/bitset); a key is represented in the filter by setting the bits at each value of the  hashing functions (modulo _m_). Set membership is done by _testing_ whether the bits at each value of the hashing functions (again, modulo _m_) are set. If so, the item is in the set. If the item is actually in the set, a Bloom filter will never fail (the true positive rate is 1.0); but it is susceptible to false positives. The art is to choose _k_ and _m_ correctly.
 
 In this implementation, the hashing functions used is [murmurhash](github.com/twmb/murmur3), a non-cryptographic hashing function.
 
